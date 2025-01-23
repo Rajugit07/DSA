@@ -19,7 +19,7 @@ int main(){
      cin>>pen;
 
      float amount = pencil + book + pen;
-     float amountWithGST = amount * 18 / 100;
+     float amountWithGST = amount + (amount * 18 / 100);
 
      cout<<"your total price with GST is:"<<amountWithGST;
 
