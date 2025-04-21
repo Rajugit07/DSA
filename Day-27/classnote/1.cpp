@@ -2,83 +2,46 @@
 #include <vector>
 using namespace std;
 
-// create stack using vectorcls
-
+//* create stack operation using vector
 
 class Stack
 {
-    vector<int> vec;
 
 public:
-    void push(int val) // O(1)
+    vector<int> vec;
+
+    // push
+    void push(int vel)
     {
-        vec.push_back(val);
+
+        vec.push_back(vel);
     }
 
-    void pop() // O(1)
+    // pop
+    void pop()
     {
+
         if (isEmpty())
         {
-            cout << "stack is empty.\n";
-            return;
+            cout << "Stack is empty";
         }
         vec.pop_back();
     }
 
-    int top() // O(1)
+    // top
+
+    int top()
     {
-        if (isEmpty())
-        {
-            cout << "stack is empty.\n";
-            return -1;
-        }
+
         int lastIdx = vec.size() - 1;
         return vec[lastIdx];
     }
 
-    bool isEmpty() // O(1)
+    bool isEmpty()
     {
-
         return vec.size() == 0;
     }
 };
-
-// create stack using array
-
-// class StackArr
-// {
-
-//     int arr[] = 5;
-
-// public:
-//     void push(int vel)
-//     {
-//         arr.push_back(vel);
-//     }
-//     void pop(isEmpty())
-//     {
-//         if ()
-//         {
-//             cout << "Stack is empty.\n";
-//             return;
-//         }
-//         arr.pop_back();
-//     }
-//     int top()
-//     {
-//         if (isEmpty())
-//         {
-//             cout < "Stack is empty./n";
-//             return -1;
-//         }
-//         int lastidx = 4;
-//         return arr[lastidx];
-//     }
-//     bool isEmpty()
-//     {
-//         return arr.size() == 0;
-//     }
-// };
 
 int main()
 {
@@ -89,21 +52,77 @@ int main()
 
     while (!s.isEmpty())
     {
-        cout << s.top() << " ";
+        cout << s.top() << "";
         s.pop();
     }
 
-    // using array
-    // StackArr a;
-    // a.push(3);
-    // a.push(2);
-    // a.push(1);
-
-    // while (!s.isEmpty())
-    // {
-    //     cout << a.top() << " ";
-    //     a.pop();
-    // }
-
     return 0;
 }
+
+//* create stack operation using array
+//   #include <iostream>
+//  using namespace std;
+
+// class StackArr
+// {
+// private:
+//     int arr[5];      // Fixed-size array for stack
+//     int topIndex;    // To track the top element
+
+// public:
+//     StackArr() { topIndex = -1; } // Initialize stack as empty
+
+//     void push(int val)
+//     {
+//         if (topIndex >= 4) // Stack overflow check
+//         {
+//             cout << "Stack overflow! Cannot push " << val << ".\n";
+//             return;
+//         }
+//         arr[++topIndex] = val; // Insert element and increment top index
+//     }
+
+//     void pop()
+//     {
+//         if (isEmpty()) // Stack underflow check
+//         {
+//             cout << "Stack is empty.\n";
+//             return;
+//         }
+//         topIndex--; // Remove top element
+//     }
+
+//     int top()
+//     {
+//         if (isEmpty()) // Check if stack is empty
+//         {
+//             cout << "Stack is empty.\n";
+//             return -1;
+//         }
+//         return arr[topIndex]; // Return the top element
+//     }
+
+//     bool isEmpty()
+//     {
+//         return topIndex == -1; // Check if top index is -1 (empty)
+//     }
+// };
+
+// int main()
+// {
+//     StackArr stack;
+//     stack.push(10);
+//     stack.push(20);
+//     stack.push(30);
+
+//     cout << "Top element: " << stack.top() << endl;
+
+//     stack.pop();
+//     cout << "Top after pop: " << stack.top() << endl;
+
+//     stack.pop();
+//     stack.pop();
+//     stack.pop(); // Trying to pop when stack is empty
+
+//     return 0;
+// }

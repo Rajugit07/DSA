@@ -7,7 +7,7 @@ void print(int arr[], int n)
      {
           cout << arr[i] << ",";
      }
-}
+} 
 
 void selectionSort(int arr[], int n)
 {
