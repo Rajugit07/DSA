@@ -5,8 +5,6 @@ using namespace std;
 
 //* Push at Bottom of the Stack...
 
-
-
 int main()
 {
     stack<int> s;
